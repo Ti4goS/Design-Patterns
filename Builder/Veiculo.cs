@@ -1,5 +1,6 @@
 ﻿// Builder pattern -- Real World example
 
+using Builder.Structural;
 using System;
 using System.Collections.Generic;
 
@@ -44,6 +45,11 @@ namespace Builder.RealWorld
 
             shop.Construct(builder);
 
+            builder.Vehicle.Show();
+
+
+            builder = new BusBuilder();
+            shop.Construct(builder);
             builder.Vehicle.Show();
 
 
@@ -209,6 +215,36 @@ namespace Builder.RealWorld
         }
     }
 
+    /// <summary>
+    /// The 'ConcreteBuilder4' class
+    /// </summary>
+    internal class BusBuilder : VehicleBuilder
+    {
+        public BusBuilder()
+        {
+            vehicle = new Vehicle("Bus");
+        }
+
+        public override void BuildDoors()
+        {
+            vehicle["doors"] = "1";
+        }
+
+        public override void BuildEngine()
+        {
+            vehicle["engine"] = "3.0 130cv 16v Turbo";
+        }
+
+        public override void BuildFrame()
+        {
+            vehicle["frame"] = "Bus Frame";
+        }
+
+        public override void BuildWheels()
+        {
+            vehicle["wheels"] = "2";
+        }
+    }
 
     /// <summary>
     /// The 'Product' class

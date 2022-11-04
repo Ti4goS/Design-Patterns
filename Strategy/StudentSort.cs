@@ -47,6 +47,9 @@ namespace Strategy.RealWorld
             studentRecords.Sort();
 
 
+            studentRecords.SetSortStrategy(new InsertionSort());
+
+            studentRecords.Sort();
             // Wait for user
 
             Console.ReadKey();
@@ -62,6 +65,19 @@ namespace Strategy.RealWorld
         public abstract void Sort(List<string> list);
     }
 
+    /// <summary>
+    /// A 'ConcreteStrategy' class
+    /// </summary>
+    internal class InsertionSort : SortStrategy
+    {
+        public override void Sort(List<string> list)
+        {
+
+            //Sort();
+
+            Console.WriteLine("InsertionSorted list");
+        }
+    }
 
     /// <summary>
     /// A 'ConcreteStrategy' class

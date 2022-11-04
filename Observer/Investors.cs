@@ -24,7 +24,6 @@ namespace Observer.RealWorld
 
             ibm.Attach(new Investor("Dósea"));
 
-
             // Fluctuating prices will notify investors
 
             ibm.Price = 120.10;
@@ -35,6 +34,24 @@ namespace Observer.RealWorld
 
             ibm.Price = 120.75;
 
+
+            // Create BerkshireHathaway stock and attach investors
+
+            var berkshireHathaway = new BerkshireHathaway("BRK-B", 287.00);
+
+            berkshireHathaway.Attach(new Investor("Sorros"));
+
+            berkshireHathaway.Attach(new Investor("Dósea"));
+
+            // Fluctuating prices will notify investors
+
+            berkshireHathaway.Price = 287.50;
+
+            berkshireHathaway.Price = 183.00;
+
+            berkshireHathaway.Price = 286.00;
+
+            berkshireHathaway.Price = 285.78;
 
             // Wait for user
 
@@ -114,6 +131,13 @@ namespace Observer.RealWorld
         // Gets or sets the price
     }
 
+
+    internal class BerkshireHathaway : Stock
+    {
+        public BerkshireHathaway(string symbol, double price) : base(symbol, price)
+        {
+        }
+    }
 
     /// <summary>
     /// The 'ConcreteSubject' class

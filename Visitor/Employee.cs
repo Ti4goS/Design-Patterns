@@ -35,6 +35,8 @@ namespace Visitor.RealWorld
 
             e.Accept(new FaltasVisitor());
 
+            e.Accept(new FolgaVisitor());
+
 
             // Wait for user
 
@@ -120,6 +122,26 @@ namespace Visitor.RealWorld
         #endregion
     }
 
+
+    internal class FolgaVisitor : IVisitor
+    {
+        #region IVisitor Members
+
+        public void Visit(Element element)
+        {
+            var employee = element as Employee;
+
+            // add an extra day of vacation
+            employee.VacationDays++;
+            
+
+            Console.WriteLine("{0} {1}'s new vacation days: {2}",
+                              employee.GetType().Name, employee.Name,
+                              employee.VacationDays);
+        }
+
+        #endregion
+    }
 
     /// <summary>
     /// The 'Element' abstract class

@@ -31,6 +31,10 @@ namespace Command.RealWorld
 
             user.Compute('*', 7);
 
+            user.Compute('+', 1050);
+
+            user.Compute('*', 52);
+
             
 
             // Undo 4 commands

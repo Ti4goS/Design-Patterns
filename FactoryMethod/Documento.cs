@@ -147,6 +147,18 @@ namespace Factory.RealWorld
     }
 
 
+    internal class Article : Document
+    {
+        public override void CreatePages()
+        {
+            Pages.Add(new IntroductionPage());
+            Pages.Add(new ExperiencePage());
+            Pages.Add(new ResultsPage());
+            Pages.Add(new ConclusionPage());
+        }
+    }
+
+
     /// <summary>
     /// A 'ConcreteCreator' class
     /// </summary>

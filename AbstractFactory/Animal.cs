@@ -33,6 +33,15 @@ namespace Abstract.RealWorld
             world.RunFoodChain();
 
 
+            // Create and run the Asia animal world
+
+            ContinentFactory asia = new AsiaFactory();
+
+            world = new AnimalWorld(asia);
+
+            world.RunFoodChain();
+
+
             // Wait for user input
 
             Console.ReadKey();
@@ -85,6 +94,20 @@ namespace Abstract.RealWorld
     }
 
 
+    internal class AsiaFactory : ContinentFactory
+    {
+        public override Carnivore CreateCarnivore()
+        {
+            return new LeopardoDeJava();
+        }
+
+        public override Herbivore CreateHerbivore()
+        {
+            return new PatoMandarim();
+        }
+    }
+
+
     /// <summary>
     /// The 'AbstractProductA' abstract class
     /// </summary>
@@ -99,6 +122,23 @@ namespace Abstract.RealWorld
     internal abstract class Carnivore
     {
         public abstract void Eat(Herbivore h);
+    }
+
+
+    internal class PatoMandarim : Herbivore
+    {
+    }
+
+
+    internal class LeopardoDeJava : Carnivore
+    {
+        public override void Eat(Herbivore h)
+        {
+            // Eat Pato Mandarim
+
+            Console.WriteLine(GetType().Name +
+                  " eats " + h.GetType().Name);
+        }
     }
 
 

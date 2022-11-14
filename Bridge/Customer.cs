@@ -159,6 +159,8 @@ namespace Bridge.RealWorld
 
         public abstract void ShowRecord();
 
+        public abstract void LastRecord();
+
         public abstract void ShowAllRecords();
     }
 
@@ -232,5 +234,11 @@ namespace Bridge.RealWorld
                 Console.WriteLine(" " + customer);
             }
         }
+
+        public override void LastRecord()
+        {
+            _current = _customers.Count - 1;
+        }
+
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "ConsoleApplication1\Adapter.csproj", "{9EA7CC24-854E-46AF-8855-12177C7C1C57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter\Adapter.csproj", "{9EA7CC24-854E-46AF-8855-12177C7C1C57}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facade", "Facade\Facade.csproj", "{075061E6-79DA-4A39-B737-FB07541A35F4}"
 EndProject

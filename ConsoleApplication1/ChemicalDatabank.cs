@@ -39,6 +39,10 @@ namespace Adapter.RealWorld
             ethanol.Display();
 
 
+            Compound phosphate = new RichCompound("Phosphate");
+
+            phosphate.Display();
+
             // Wait for user
 
             Console.ReadKey();
@@ -144,6 +148,9 @@ namespace Adapter.RealWorld
                     case "ethanol":
                         return -114.1f;
 
+                    case "phosphate":
+                        return 44.0f;
+
                     default:
                         return 0f;
                 }
@@ -163,6 +170,9 @@ namespace Adapter.RealWorld
 
                     case "ethanol":
                         return 78.3f;
+
+                    case "phosphate":
+                        return 200.0f;
 
                     default:
                         return 0f;
@@ -184,6 +194,9 @@ namespace Adapter.RealWorld
                 case "ethanol":
                     return "C2H5OH";
 
+                case "phosphate":
+                    return "PO43";
+
                 default:
                     return "";
             }
@@ -202,6 +215,9 @@ namespace Adapter.RealWorld
 
                 case "ethanol":
                     return 46.0688;
+
+                case "phosphate":
+                    return 94.9714;
 
                 default:
                     return 0d;

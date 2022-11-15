@@ -40,6 +40,19 @@ namespace Composite.RealWorld
             root.Add(comp);
 
 
+            // Create a branch
+
+            var newComp = new CompositeElement("Three Circles");
+
+            newComp.Add(new PrimitiveElement("Pink Circle"));
+
+            newComp.Add(new PrimitiveElement("Brown Circle"));
+
+            newComp.Add(new PrimitiveElement("Gray Circle"));
+
+            root.Add(newComp);
+
+
             // Add and remove a PrimitiveElement
 
             var pe =

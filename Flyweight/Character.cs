@@ -16,7 +16,7 @@ namespace Flyweight.RealWorld
         {
             // Build a document with text
 
-            string document = "AAZFFZBBZFB";
+            string document = "AAZFFZBBZFBT";
 
             char[] chars = document.ToCharArray();
 
@@ -83,6 +83,10 @@ namespace Flyweight.RealWorld
                     case 'F':
                         character = new CharacterF();
                         break;
+
+                    case 'T':
+                        character = new CharacterT();
+                        break;
                     //...
 
                     case 'Z':
@@ -115,6 +119,31 @@ namespace Flyweight.RealWorld
 
 
         public abstract void Display(int pointSize);
+    }
+
+
+    internal class CharacterT : Character
+    {
+        public CharacterT()
+        {
+            symbol = 'T';
+
+            height = 130;
+
+            width = 150;
+
+            ascent = 50;
+
+            descent = 0;
+        }
+
+        public override void Display(int pointSize)
+        {
+            this.pointSize = pointSize;
+
+            Console.WriteLine(symbol +
+                              " (pointsize " + this.pointSize + ")");
+        }
     }
 
 

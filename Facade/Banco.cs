@@ -105,6 +105,17 @@ namespace Facade.RealWorld
     }
 
 
+    internal class Serasa
+    {
+        public bool HasNoDebits(Customer c)
+        {
+            Console.WriteLine("Check Debits on Serasa for " + c.Name);
+
+            return true;
+        }
+    }
+
+
     /// <summary>
     /// The 'Facade' class
     /// </summary>
@@ -114,7 +125,7 @@ namespace Facade.RealWorld
 
         private readonly Credit _credit = new Credit();
         private readonly Loan _loan = new Loan();
-
+        private readonly Serasa _serasa = new Serasa();
 
         public bool IsEligible(Customer cust, int amount)
         {
@@ -138,6 +149,11 @@ namespace Facade.RealWorld
             }
 
             else if (!_credit.HasGoodCredit(cust))
+            {
+                eligible = false;
+            }
+
+            else if (!_serasa.HasNoDebits(cust))
             {
                 eligible = false;
             }

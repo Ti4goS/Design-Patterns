@@ -45,6 +45,12 @@ namespace Decorator.RealWorld
             borrowvideo.Display();
 
 
+            var damegedItens = new Damaged(book);
+
+            damegedItens.RecoverItem("Inside ASP.NET");
+
+            damegedItens.Display();
+
             // Wait for user
 
             Console.ReadKey();
@@ -161,6 +167,41 @@ namespace Decorator.RealWorld
         public override void Display()
         {
             libraryItem.Display();
+        }
+    }
+
+
+    internal class Damaged : Decorator
+    {
+        protected List<string> _damaged = new List<string>();
+
+        public Damaged(LibraryItem libraryItem) : base(libraryItem)
+        {
+        }
+
+        public void AddDamegedItem(string name)
+        {
+            _damaged.Add(name);
+
+            libraryItem.NumCopies--;
+        }
+
+        public void RecoverItem(string name)
+        {
+            _damaged.Remove(name);
+
+            libraryItem.NumCopies++;
+        }
+
+        public override void Display()
+        {
+            base.Display();
+
+
+            foreach (string damaged in _damaged)
+            {
+                Console.WriteLine(" borrower: " + damaged);
+            }
         }
     }
 
